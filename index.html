@@ -2,17 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>My GitHub Pages + Observable</title>
+  <title>CS448B Final Project: The Silent Clues in the Human Voice</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
+  <h1>CS448B Final Project: The Silent Clues in the Human Voice</h1>
 
-  <iframe width="100%" height="500" frameborder="0"
-  src="https://observablehq.com/embed/ae7ff82ba93c404a?cell=*"></iframe>
-  <iframe
-    width="960"
-    height="600"
-    frameborder="0"
-  ></iframe>
+  <!-- This is where the Observable notebook will be rendered -->
+  <main id="notebook"></main>
 
+  <!-- Observable Runtime embed (NO footer) -->
+  <script type="module">
+    import { Runtime, Inspector } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+    import define from "https://api.observablehq.com/ae7ff82ba93c404a.js?v=3";
+
+    // This renders ALL visible cells from the notebook into #notebook, in order
+    new Runtime().module(define, Inspector.into(document.querySelector("#notebook")));
+  </script>
 </body>
 </html>
