@@ -7,78 +7,41 @@
   padding: 0;
 }
 
+/* Clean sans-serif look */
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.6;
-  color: #111827; /* slate-900-ish */
-  background: #f3f4f6; /* light gray */
+  color: #111827;
+  background: #f3f4f6;
 }
 
-/* Layout helpers */
+/* Layout */
 .container {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
 
-/* Header / Nav */
+/* Make the actual text narrower (about half width) */
+.text-column {
+  max-width: 48rem;          /* controls line length & width */
+  margin: 0 auto;            /* center it */
+}
+
+/* Header */
 .site-header {
   background: radial-gradient(circle at top left, #4f46e5 0, #1f2937 55%, #020617 100%);
   color: #e5e7eb;
-  padding-bottom: 3rem;
+  padding: 3rem 0 2.5rem;
 }
 
-.top-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1.25rem 0;
-}
-
-.logo a {
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  text-decoration: none;
-  color: #e5e7eb;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1.25rem;
-}
-
-.nav-links a {
-  text-decoration: none;
-  font-size: 0.9rem;
-  color: #cbd5f5;
-  padding-bottom: 0.15rem;
-  border-bottom: 1px solid transparent;
-  transition: color 0.15s ease, border-color 0.15s ease;
-}
-
-.nav-links a:hover {
-  color: #ffffff;
-  border-color: #a5b4fc;
-}
-
-/* Hero */
 .hero {
-  padding: 3rem 0 1rem;
   text-align: left;
 }
 
-.hero .tagline {
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 0.8rem;
-  color: #a5b4fc;
-  margin-bottom: 0.75rem;
-}
-
 .hero h1 {
-  font-size: clamp(1.9rem, 4vw, 2.4rem);
-  line-height: 1.25;
+  font-size: clamp(1.9rem, 3.3vw, 2.5rem);
+  line-height: 1.3;
   margin-bottom: 0.75rem;
   color: #ffffff;
 }
@@ -112,13 +75,13 @@ body {
   color: #111827;
 }
 
-.section p + p {
-  margin-top: 0.75rem;
-}
-
 .section p {
   font-size: 0.98rem;
   color: #111827;
+}
+
+.section p + p {
+  margin-top: 0.75rem;
 }
 
 /* Lists */
@@ -165,18 +128,15 @@ body {
 
 /* Responsive */
 @media (max-width: 720px) {
-  .top-nav {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.75rem;
-  }
-
-  .nav-links {
-    flex-wrap: wrap;
-    gap: 0.75rem;
-  }
-
   .hero {
-    padding-top: 2rem;
+    text-align: left;
+  }
+
+  .section {
+    padding: 2.25rem 0;
+  }
+
+  .text-column {
+    max-width: 100%;
   }
 }
