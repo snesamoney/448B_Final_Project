@@ -1,1 +1,182 @@
+/* Basic reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+  color: #111827; /* slate-900-ish */
+  background: #f3f4f6; /* light gray */
+}
+
+/* Layout helpers */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Header / Nav */
+.site-header {
+  background: radial-gradient(circle at top left, #4f46e5 0, #1f2937 55%, #020617 100%);
+  color: #e5e7eb;
+  padding-bottom: 3rem;
+}
+
+.top-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 0;
+}
+
+.logo a {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  color: #e5e7eb;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.25rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: #cbd5f5;
+  padding-bottom: 0.15rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+  border-color: #a5b4fc;
+}
+
+/* Hero */
+.hero {
+  padding: 3rem 0 1rem;
+  text-align: left;
+}
+
+.hero .tagline {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.8rem;
+  color: #a5b4fc;
+  margin-bottom: 0.75rem;
+}
+
+.hero h1 {
+  font-size: clamp(1.9rem, 4vw, 2.4rem);
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+  color: #ffffff;
+}
+
+.authors {
+  font-size: 0.95rem;
+  color: #e5e7eb;
+  opacity: 0.9;
+}
+
+/* Sections */
+.section {
+  padding: 3rem 0;
+  background: #f9fafb;
+}
+
+.section-alt {
+  background: #ffffff;
+}
+
+.section h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1.25rem;
+  color: #111827;
+}
+
+.section h3 {
+  font-size: 1.2rem;
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+  color: #111827;
+}
+
+.section p + p {
+  margin-top: 0.75rem;
+}
+
+.section p {
+  font-size: 0.98rem;
+  color: #111827;
+}
+
+/* Lists */
+.feature-list {
+  margin: 0.75rem 0 1.25rem 1.25rem;
+  list-style: disc;
+}
+
+.feature-list li {
+  margin-bottom: 0.4rem;
+}
+
+/* Info card styling */
+.info-card {
+  margin: 1.75rem 0;
+  padding: 1.25rem 1.5rem;
+  border-radius: 0.75rem;
+  background: #f3f4ff;
+  border: 1px solid #e5e7eb;
+}
+
+.info-card h3 {
+  margin-top: 0;
+}
+
+.info-card ul {
+  margin-top: 0.75rem;
+  margin-left: 1.25rem;
+  list-style: disc;
+}
+
+.info-card li {
+  margin-bottom: 0.5rem;
+}
+
+/* Footer */
+.site-footer {
+  background: #020617;
+  color: #9ca3af;
+  padding: 1.5rem 0;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+  .top-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .hero {
+    padding-top: 2rem;
+  }
+}
