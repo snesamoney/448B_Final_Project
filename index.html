@@ -1,220 +1,326 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Source+Serif+Pro:wght@300;400;600&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
   <title>Silent Cues in the Human Voice: Acoustic Biomarkers for Parkinson’s Disease</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="styles.css">
+
+  <!-- NYT-ish serif fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Source+Serif+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* BODY – NYT-ish look */
+    body {
+      font-family: "Source Serif Pro", Georgia, "Times New Roman", serif;
+      background: #ffffff;
+      color: #111;
+      line-height: 1.7;
+    }
+
+    /* CENTERED ARTICLE COLUMN */
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .text-column {
+      max-width: 620px;        /* narrow article column */
+      margin: 0 auto;
+      padding: 2rem 1.25rem 3rem;
+    }
+
+    /* HEADER */
+    .site-header {
+      padding: 3rem 1rem 1rem;
+      border-bottom: 1px solid #e5e5e5;
+      text-align: center;
+    }
+
+    .site-header h1 {
+      font-family: "Lora", "Source Serif Pro", Georgia, serif;
+      font-size: 2.6rem;
+      font-weight: 700;
+      line-height: 1.2;
+      max-width: 720px;
+      margin: 0 auto 1rem auto;
+    }
+
+    .authors {
+      font-size: 1rem;
+      color: #444;
+      font-style: italic;
+      margin-bottom: 0.5rem;
+    }
+
+    /* SECTIONS */
+    .section {
+      padding-top: 1rem;
+    }
+
+    .section h2 {
+      font-family: "Lora", "Source Serif Pro", Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 600;
+      margin: 2rem 0 1rem;
+    }
+
+    .section h3 {
+      font-family: "Lora", "Source Serif Pro", Georgia, serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    p {
+      margin-bottom: 1.1rem;
+      font-size: 1.08rem;
+      letter-spacing: 0.1px;
+    }
+
+    /* LISTS */
+    .feature-list {
+      margin: 1rem 0 1.5rem 1.5rem;
+      list-style: disc;
+    }
+
+    .feature-list li {
+      margin-bottom: 0.5rem;
+      font-size: 1.02rem;
+    }
+
+    /* INFO CARD */
+    .info-card {
+      margin: 2rem 0;
+      padding: 1.25rem 1.5rem;
+      border-left: 3px solid #222;
+      background: #fafafa;
+    }
+
+    .info-card h3 {
+      font-family: "Lora", "Source Serif Pro", Georgia, serif;
+      margin-top: 0;
+      margin-bottom: 0.75rem;
+    }
+
+    .info-card ul {
+      margin-left: 1.5rem;
+      list-style: disc;
+    }
+
+    .info-card li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* FOOTER */
+    .site-footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #777;
+      border-top: 1px solid #eee;
+    }
+
+    @media (max-width: 600px) {
+      .site-header h1 {
+        font-size: 2.1rem;
+      }
+
+      .text-column {
+        max-width: 100%;
+        padding: 1.5rem 1.25rem 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header class="site-header" id="top">
-    <div class="container">
-      <div class="hero">
-        <h1>Silent Cues in the Human Voice: Acoustic Biomarkers for Parkinson’s Disease</h1>
-        <p class="authors">
-          Authors: Gavin Liu, Sean Nesamoney, Ngoc Tran
+  <div class="page">
+    <header class="site-header">
+      <h1>Silent Cues in the Human Voice: Acoustic Biomarkers for Parkinson’s Disease</h1>
+      <p class="authors">
+        Authors: Gavin Liu, Sean Nesamoney, Ngoc Tran
+      </p>
+    </header>
+
+    <main class="text-column">
+      <section id="introduction" class="section">
+        <h2>Introduction</h2>
+        <p>
+          It is estimated that nearly 1 million people in the United States are living with Parkinson’s Disease (PD)
+          (National Institute of Neurological Disorders and Stroke).
         </p>
-      </div>
-    </div>
-  </header>
+        <p>
+          While Parkinson’s Disease is most often recognized by its visible motor symptoms and slowness of movement, one
+          of its earliest and most subtle indicators is often heard rather than seen. The human voice is a complex
+          instrument produced by the precise coordination of airflow and muscle control. For patients with PD, the
+          neurological degradation that affects limb movement also impacts the larynx and vocal folds, leading to a
+          condition known as dysphonia. This typically manifests as a softer, breathy, or monotonic voice, often
+          appearing years before an actual diagnosis of PD. This article explores the potential of using these subtle
+          acoustic changes as digital biomarkers. By analyzing a dataset of voice recordings from both healthy
+          individuals and diagnosed patients, we look at distinct human voice biomarkers such as pitch instability
+          (jitter), loudness variation (shimmer), and many other biomarkers to see the effectiveness of these voice
+          biomarkers to detect the PD.
+        </p>
+        <p>
+          To understand the data, we will first look at the biology behind PD. Vocal cords are delicate folds of tissue
+          that vibrate thousands of times per second to produce sound. In a healthy voice, this vibration is periodic
+          and stable. However, PD causes patients to have a lack of fine motor control in their laryngeal muscles. This
+          instability leaves a mathematical footprint in the voice signal, presenting itself as useful acoustic
+          biomarkers to analyze. The dataset used in this article consists of various acoustic measurements categorized
+          into groups such as Jitter (frequency variation), Shimmer (amplitude variation), and certain non-linear
+          measurements. For example, a healthy voice holds a steady pitch, while a PD voice may have higher jitter from
+          fluctuating microscopically from cycle to cycle.
+        </p>
+      </section>
 
-  <main>
-    <section id="introduction" class="section">
-      <div class="container">
-        <div class="text-column">
-          <h2>Introduction</h2>
-          <p>
-            It is estimated that nearly 1 million people in the United States are living with Parkinson’s Disease (PD)
-            (National Institute of Neurological Disorders and Stroke).
-          </p>
-          <p>
-            While Parkinson’s Disease is most often recognized by its visible motor symptoms and slowness of movement,
-            one of its earliest and most subtle indicators is often heard rather than seen. The human voice is a complex
-            instrument produced by the precise coordination of airflow and muscle control. For patients with PD, the
-            neurological degradation that affects limb movement also impacts the larynx and vocal folds, leading to a
-            condition known as dysphonia. This typically manifests as a softer, breathy, or monotonic voice, often
-            appearing years before an actual diagnosis of PD. This article explores the potential of using these subtle
-            acoustic changes as digital biomarkers. By analyzing a dataset of voice recordings from both healthy
-            individuals and diagnosed patients, we look at distinct human voice biomarkers such as pitch instability
-            (jitter), loudness variation (shimmer), and many other biomarkers to see the effectiveness of these voice
-            biomarkers to detect the PD.
-          </p>
-          <p>
-            To understand the data, we will first look at the biology behind PD. Vocal cords are delicate folds of tissue
-            that vibrate thousands of times per second to produce sound. In a healthy voice, this vibration is periodic
-            and stable. However, PD causes patients to have a lack of fine motor control in their laryngeal muscles. This
-            instability leaves a mathematical footprint in the voice signal, presenting itself as useful acoustic
-            biomarkers to analyze. The dataset used in this article consists of various acoustic measurements categorized
-            into groups such as Jitter (frequency variation), Shimmer (amplitude variation), and certain non-linear
-            measurements. For example, a healthy voice holds a steady pitch, while a PD voice may have higher jitter from
-            fluctuating microscopically from cycle to cycle.
-          </p>
-        </div>
-      </div>
-    </section>
+      <section id="vocal-instability" class="section">
+        <h2>How Parkinson’s Disrupts Vocal Stability and Volume</h2>
+        <p>
+          Parkinson’s disease negatively impacts the delicate muscles of the larynx, causing vocal instability. In
+          research, this is referred to as <strong>jitter</strong>, the cycle-to-cycle variation in the pitch
+          (fundamental frequency) of a person's voice, caused by irregularities in vocal fold vibration. This is largely
+          driven by the rigidity, stiffness, and tremor of the laryngeal muscles in the presence of Parkinson's disease,
+          causing more irregular and erratic oscillations in pitch. Consequently, people with Parkinson's often exhibit
+          higher jitter, which can result in a rough or harsh vocal quality.
+        </p>
+        <p>
+          Similarly, these disrupted muscles also impact the control an individual has over the volume of their voice. In
+          research, this is referred to as <strong>shimmer</strong>, the cycle-to-cycle fluctuations in the amplitude of
+          the voice. Just as jitter is often used as a metric to assess the progression of PD, shimmer can be used in the
+          same way. PD patients tend to exhibit higher-than-normal shimmer because the disease disrupts the physiological
+          mechanisms that control voice volume.
+        </p>
+        <p>
+          The box plot visualization below shows how these moment-to-moment variations compare between PD patients and
+          healthy controls. Even though individual fluctuations seem small, their cumulative pattern can reveal meaningful
+          differences. Every colored dot represents one person’s voice. The number on the x-axis is the recording index
+          (1st recording, 2nd, 3rd, etc.). The y-axis can display either jitter or shimmer and can be changed using the
+          provided drop-down menu.
+        </p>
+        <ul class="feature-list">
+          <li>Higher jitter means a more unstable, shaky, or breathy voice.</li>
+          <li>Higher shimmer means greater fluctuation in the volume of the individual’s voice.</li>
+          <li>Healthy speakers (blue) tend to have low, steady jitter/shimmer values.</li>
+          <li>Subjects with Parkinson’s disease (red) typically show higher jitter/shimmer and more fluctuation between recordings.</li>
+        </ul>
+        <p>
+          Use the slider to reveal how jitter changes across recordings and to compare how stable each subject’s voice
+          remains over time.
+        </p>
+      </section>
 
-    <section id="vocal-instability" class="section section-alt">
-      <div class="container">
-        <div class="text-column">
-          <h2>How Parkinson’s Disrupts Vocal Stability and Volume</h2>
-          <p>
-            Parkinson’s disease negatively impacts the delicate muscles of the larynx, causing vocal instability. In
-            research, this is referred to as <strong>jitter</strong>, the cycle-to-cycle variation in the pitch
-            (fundamental frequency) of a person's voice, caused by irregularities in vocal fold vibration. This is largely
-            driven by the rigidity, stiffness, and tremor of the laryngeal muscles in the presence of Parkinson's disease,
-            causing more irregular and erratic oscillations in pitch. Consequently, people with Parkinson's often exhibit
-            higher jitter, which can result in a rough or harsh vocal quality.
-          </p>
-          <p>
-            Similarly, these disrupted muscles also impact the control an individual has over the volume of their voice.
-            In research, this is referred to as <strong>shimmer</strong>, the cycle-to-cycle fluctuations in the amplitude
-            of the voice. Just as jitter is often used as a metric to assess the progression of PD, shimmer can be used in
-            the same way. PD patients tend to exhibit higher-than-normal shimmer because the disease disrupts the
-            physiological mechanisms that control voice volume.
-          </p>
-          <p>
-            The box plot visualization below shows how these moment-to-moment variations compare between PD patients and
-            healthy controls. Even though individual fluctuations seem small, their cumulative pattern can reveal
-            meaningful differences. Every colored dot represents one person’s voice. The number on the x-axis is the
-            recording index (1st recording, 2nd, 3rd, etc.). The y-axis can display either jitter or shimmer and can be
-            changed using the provided drop-down menu.
-          </p>
-          <ul class="feature-list">
-            <li>Higher jitter means a more unstable, shaky, or breathy voice.</li>
-            <li>Higher shimmer means greater fluctuation in the volume of the individual’s voice.</li>
-            <li>Healthy speakers (blue) tend to have low, steady jitter/shimmer values.</li>
-            <li>Subjects with Parkinson’s disease (red) typically show higher jitter/shimmer and more fluctuation between recordings.</li>
+      <section id="scatterplots" class="section">
+        <h2>Finding Other Interesting Biomarkers via Scatterplots</h2>
+        <p>
+          While a single time series illustration helps highlight how irregularities appear and change over time,
+          Parkinson’s cannot be diagnosed from a couple of biomarkers alone. We instead look for patterns that repeat
+          across many different biomarkers. To better understand these diverse signals, we shift from a temporal view to a
+          multivariate perspective. One way to discover these patterns is through scatterplots of two features on each of
+          the X-axis and Y-axis.
+        </p>
+
+        <h3>For Example...</h3>
+        <p>
+          The plot below initially shows a scatterplot of PPE (Pitch Period Entropy) and Harmonics-to-Noise Ratio (HNR)
+          across both healthy subjects and patients with PD.
+        </p>
+        <p>
+          Both PPE and HNR measures capture complementary dimensions of vocal degradation. PPE rises when pitch becomes
+          unstable and irregular, while HNR falls as the voice loses its harmonic structure and becomes noisier. When
+          plotted together, these opposing effects create a clear separation: Healthy voices cluster tightly in the
+          low-PPE, high-HNR region and patients with PD have voices shifting toward higher PPE and lower HNR.
+        </p>
+        <p>
+          PPE and HNR are just one example of a particularly strong pairing, but not the only features worth exploring. By
+          experimenting with other combinations of features, you may uncover pairings that produce even sharper boundaries
+          or reveal more nuanced patterns between healthy subjects and those with PD. Feel free to interact and try out
+          various feature pairs across the Multi-Chart comparison visualization and see if any unique pairs stand out!
+        </p>
+
+        <div class="info-card">
+          <h3>Scatterplot Features</h3>
+          <ul>
+            <li><strong>Select X and Y axes:</strong> Use the dropdown menus to choose which variables to plot. A brief description of the selected variable appears in the gray information box.</li>
+            <li><strong>Filter by Healthy or Parkinson’s groups:</strong> Toggle the visibility of either group or view both at the same time. By default, both groups are shown.</li>
+            <li><strong>Toggle regression lines:</strong> Enable linear regression lines for each group. Hovering over a line displays its R² value (coefficient of determination) via a tooltip and highlights only the points belonging to that group. R² values below 0.15 are marked red, whereas values 1.5 or higher are marked green.</li>
+            <li><strong>Toggle Y-min &amp; Y-max per group:</strong> Display horizontal lines marking each group’s minimum and maximum Y-axis values. Hovering reveals the max or min value and highlights only that group’s points.</li>
           </ul>
-          <p>
-            Use the slider to reveal how jitter changes across recordings and to compare how stable each subject’s voice
-            remains over time.
-          </p>
         </div>
-      </div>
-    </section>
 
-    <section id="scatterplots" class="section">
-      <div class="container">
-        <div class="text-column">
-          <h2>Finding Other Interesting Biomarkers via Scatterplots</h2>
-          <p>
-            While a single time series illustration helps highlight how irregularities appear and change over time,
-            Parkinson’s cannot be diagnosed from a couple of biomarkers alone. We instead look for patterns that repeat
-            across many different biomarkers. To better understand these diverse signals, we shift from a temporal view to
-            a multivariate perspective. One way to discover these patterns is through scatterplots of two features on each
-            of the X-axis and Y-axis.
-          </p>
+        <p>
+          After looking across many different feature pairings, a few clear patterns begin to stand out. Some combinations
+          show only mild separation, while others reveal sharper distinctions between the healthy and PD clusters. Rather
+          than treating this exploration as a final answer, it acts as a compass that points us toward which biomarkers are
+          worth deeper investigation. The multi-chart comparison gives us a broad map of the feature landscape. The next
+          step is to zoom in on individual biomarkers to understand why certain features perform better and how they behave
+          on their own.
+        </p>
+      </section>
 
-          <h3>For Example...</h3>
-          <p>
-            The plot below initially shows a scatterplot of PPE (Pitch Period Entropy) and Harmonics-to-Noise Ratio (HNR)
-            across both healthy subjects and patients with PD.
-          </p>
-          <p>
-            Both PPE and HNR measures capture complementary dimensions of vocal degradation. PPE rises when pitch becomes
-            unstable and irregular, while HNR falls as the voice loses its harmonic structure and becomes noisier. When
-            plotted together, these opposing effects create a clear separation: Healthy voices cluster tightly in the
-            low-PPE, high-HNR region and patients with PD have voices shifting toward higher PPE and lower HNR.
-          </p>
-          <p>
-            PPE and HNR are just one example of a particularly strong pairing, but not the only features worth exploring.
-            By experimenting with other combinations of features, you may uncover pairings that produce even sharper
-            boundaries or reveal more nuanced patterns between healthy subjects and those with PD. Feel free to interact
-            and try out various feature pairs across the Multi-Chart comparison visualization and see if any unique pairs
-            stand out!
-          </p>
+      <section id="biomarkers" class="section">
+        <h2>Exploring Individual Vocal Biomarkers</h2>
+        <p>
+          Having surveyed the broader feature space, we now turn our attention to the biomarkers themselves. Instead of
+          looking at features two at a time, this section isolates each one to examine its distribution and overall
+          diagnostic value. By focusing on individual features, we can see which vocal biomarkers consistently differ
+          between healthy and Parkinson’s speakers. This microscopic view can help explain why certain combinations stand
+          out in the earlier scatterplots.
+        </p>
+        <p>
+          The interactive visualization below allows you to explore the diagnostic power of these different vocal
+          features. In the lower distribution plot, each dot represents a person. The goal of a diagnostic test is to
+          separate these two groups as best as possible. By dragging the threshold slider, the vertical black line is
+          adjusted, which acts as the decision boundary when evaluating the effectiveness of a vocal feature. A highly
+          effective feature such as PPE or RPDE, a non-linear feature, will show a distinct separation between the green
+          and red clusters, allowing the threshold line to split them with minimal error.
+        </p>
+        <p>
+          An effective way to measure the effectiveness of the classification is to plot a Receiver Operating
+          Characteristic (ROC) Curve. It visualizes the trade-off between catching the disease and avoiding false
+          positives. As you drag the slider to change the threshold decision line, the black marker on the ROC curve moves
+          along the blue curve. Moving the threshold to catch more patients increases the True Positive Rate but comes at
+          the cost of incorrectly diagnosing more healthy people to be sick, which increases the False Positive Rate.
+        </p>
+        <p>
+          The measure of a feature's success is the ROC's AUC (Area Under the Curve), displayed on the bottom right. An
+          AUC of 0.5 suggests the feature is no better than a coin flip, while an AUC of 1.0 represents a perfect test. By
+          exploring different features in the dropdown menu, you can see that while basic pitch measurements often
+          struggle to distinguish the groups, other non-linear measurements like PPE (Pitch Period Entropy) have some of
+          the strongest predictive power for PD, which is aligned with the feature-pair classification in the
+          visualization above as well.
+        </p>
+      </section>
 
-          <div class="info-card">
-            <h3>Scatterplot Features</h3>
-            <ul>
-              <li><strong>Select X and Y axes:</strong> Use the dropdown menus to choose which variables to plot. A brief description of the selected variable appears in the gray information box.</li>
-              <li><strong>Filter by Healthy or Parkinson’s groups:</strong> Toggle the visibility of either group or view both at the same time. By default, both groups are shown.</li>
-              <li><strong>Toggle regression lines:</strong> Enable linear regression lines for each group. Hovering over a line displays its R² value (coefficient of determination) via a tooltip and highlights only the points belonging to that group. R² values below 0.15 are marked red, whereas values 1.5 or higher are marked green.</li>
-              <li><strong>Toggle Y-min &amp; Y-max per group:</strong> Display horizontal lines marking each group’s minimum and maximum Y-axis values. Hovering reveals the max or min value and highlights only that group’s points.</li>
-            </ul>
-          </div>
+      <section id="conclusion" class="section">
+        <h2>Conclusion</h2>
+        <p>
+          In the end, the patterns across these visualizations reveal a subtle but consistent story: Parkinson’s disease
+          alters vocal behavior in ways that become visible when we examine the right biomarkers. Features like PPE, HNR,
+          and jitter-based metrics repeatedly emerge as strong indicators, providing clearer separation between healthy and
+          PD patients.
+        </p>
+        <p>
+          By experimenting with new feature combinations, more patterns or subtle subclusters within the PD and healthy
+          groups are still left to be discovered. The work here illustrates how the “silent cues” of the human voice can
+          become powerful digital biomarkers for earlier and more precise detection of Parkinson’s disease.
+        </p>
+      </section>
+    </main>
 
-          <p>
-            After looking across many different feature pairings, a few clear patterns begin to stand out. Some
-            combinations show only mild separation, while others reveal sharper distinctions between the healthy and PD
-            clusters. Rather than treating this exploration as a final answer, it acts as a compass that points us toward
-            which biomarkers are worth deeper investigation. The multi-chart comparison gives us a broad map of the
-            feature landscape. The next step is to zoom in on individual biomarkers to understand why certain features
-            perform better and how they behave on their own.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="biomarkers" class="section section-alt">
-      <div class="container">
-        <div class="text-column">
-          <h2>Exploring Individual Vocal Biomarkers</h2>
-          <p>
-            Having surveyed the broader feature space, we now turn our attention to the biomarkers themselves. Instead of
-            looking at features two at a time, this section isolates each one to examine its distribution and overall
-            diagnostic value. By focusing on individual features, we can see which vocal biomarkers consistently differ
-            between healthy and Parkinson’s speakers. This microscopic view can help explain why certain combinations
-            stand out in the earlier scatterplots.
-          </p>
-          <p>
-            The interactive visualization below allows you to explore the diagnostic power of these different vocal
-            features. In the lower distribution plot, each dot represents a person. The goal of a diagnostic test is to
-            separate these two groups as best as possible. By dragging the threshold slider, the vertical black line is
-            adjusted, which acts as the decision boundary when evaluating the effectiveness of a vocal feature. A highly
-            effective feature such as PPE or RPDE, a non-linear feature, will show a distinct separation between the green
-            and red clusters, allowing the threshold line to split them with minimal error.
-          </p>
-          <p>
-            An effective way to measure the effectiveness of the classification is to plot a Receiver Operating
-            Characteristic (ROC) Curve. It visualizes the trade-off between catching the disease and avoiding false
-            positives. As you drag the slider to change the threshold decision line, the black marker on the ROC curve
-            moves along the blue curve. Moving the threshold to catch more patients increases the True Positive Rate but
-            comes at the cost of incorrectly diagnosing more healthy people to be sick, which increases the False Positive
-            Rate.
-          </p>
-          <p>
-            The measure of a feature's success is the ROC's AUC (Area Under the Curve), displayed on the bottom right. An
-            AUC of 0.5 suggests the feature is no better than a coin flip, while an AUC of 1.0 represents a perfect test.
-            By exploring different features in the dropdown menu, you can see that while basic pitch measurements often
-            struggle to distinguish the groups, other non-linear measurements like PPE (Pitch Period Entropy) have some of
-            the strongest predictive power for PD, which is aligned with the feature-pair classification in the
-            visualization above as well.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="conclusion" class="section">
-      <div class="container">
-        <div class="text-column">
-          <h2>Conclusion</h2>
-          <p>
-            In the end, the patterns across these visualizations reveal a subtle but consistent story: Parkinson’s disease
-            alters vocal behavior in ways that become visible when we examine the right biomarkers. Features like PPE,
-            HNR, and jitter-based metrics repeatedly emerge as strong indicators, providing clearer separation between
-            healthy and PD patients.
-          </p>
-          <p>
-            By experimenting with new feature combinations, more patterns or subtle subclusters within the PD and healthy
-            groups are still left to be discovered. The work here illustrates how the “silent cues” of the human voice can
-            become powerful digital biomarkers for earlier and more precise detection of Parkinson’s disease.
-          </p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
+    <footer class="site-footer">
       <p>&copy; <span id="year"></span> Silent Cues in the Human Voice: Acoustic Biomarkers for Parkinson’s Disease</p>
-    </div>
-  </footer>
+    </footer>
+  </div>
 
   <script>
-    // Simple script to keep footer year up to date
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
